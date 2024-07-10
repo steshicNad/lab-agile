@@ -1,0 +1,19 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "streetsidesoftware.code-spell-checker",
+    "mhutchie.git-graph",
+    "donjayamanne.githistory",
+    "eamodio.gitlens",
+    "pkief.material-icon-theme",
+    "christian-kohler.path-intellisense",
+    "ms-vscode-remote.remote-ssh",
+    "ms-vscode-remote.remote-ssh-edit",
+    "stylelint.vscode-stylelint",
+    "simonsiefke.svg-preview",
+    "bradlc.vscode-tailwindcss",
+    "sdras.vue-vscode-snippets",
+    "bradgashler.htmltagwrap"
+  ]
+}

@@ -1,31 +1,41 @@
-import { Routes, Route } from "react-router-dom";
-import '@/styles/App.sass'
-import React from 'react'
+import { Routes, Route, Outlet } from "react-router-dom";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import Page from 'core-digital-marketplace-dashboards/src/components/Page'
+import React from "react";
 
-import Home from "core-digital-marketplace-dashboards/src/screens/Home";
+import Home from '@/views/HomePage/Home.tsx'
+import Settings from '@/views/SettingsPage/Settings.tsx'
+import Login from '@/views/LoginPage/Login.tsx'
+import MainLayout from '@/views/MainLayout/MainLayout.tsx'
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Page wide title="Dashboard" />,
+    element:<MainLayout />,
     children: [
       {
-        path: 'home',
+        index: true, // Этот маршрут будет отображаться по умолчанию
         element: <Home />,
+      },
+      {
+        path: 'settings',
+        element: <Settings/>,
       },
     ],
   },
+  {
+    path: '/login',
+    element: <Login />,
+  },
 ]);
+
 
 function App() {
   return (
-    <div className="flex"> 
+    <> 
       <React.StrictMode>
-        <RouterProvider router={router} /> 
-      </React.StrictMode>,
-    </div>
+        <RouterProvider router={router} />           
+      </React.StrictMode>
+    </>
   )
 }
 
