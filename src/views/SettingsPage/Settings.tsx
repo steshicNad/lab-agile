@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import cn from "classnames";
@@ -6,7 +7,7 @@ import Account from './Account/Account';
 
 import Dropdown from "core-digital-marketplace-dashboards/src/components/Dropdown";
 import Page from 'core-digital-marketplace-dashboards/src/components/Page';
-import styles from './Settings.module.sass'
+import styles from './Settings.module.sass';
 
 interface Navigation {title: string, action:  () => void }
 
@@ -21,22 +22,22 @@ export default function Settings(){
 
   const listNavigation: Array<Navigation> = [
     {
-      title: "Profile",
+      title: "Профиль",
       action: () =>
         scrollToProfile.current.scrollIntoView({ behavior: "smooth" }),
     },
     {
-      title: "Account",
+      title: "Аккаунт",
       action: () =>
         scrollToAccount.current.scrollIntoView({ behavior: "smooth" }),
     },
     {
-      title: "Notification",
+      title: "Уведомления",
       action: () =>
         scrollToNotification.current.scrollIntoView({ behavior: "smooth" }),
     },
     {
-      title: "Payment",
+      title: "Подписка",
       action: () =>
         scrollToPayment.current.scrollIntoView({ behavior: "smooth" }),
     },
@@ -64,8 +65,7 @@ export default function Settings(){
               key={index}
               onClick={() => handleClick(item, index)}
             >
-              {
-               t(`settings.menu.${item.title}`)}
+              {item.title}
             </button>
           ))}
         </div>

@@ -1,33 +1,21 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
-    "useDefineForClassFields": true,
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "target": "esnext",
+    // "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "moduleResolution": "node",
     "module": "ESNext",
-    "skipLibCheck": true,
-
-    /* Bundler mode */
-    "moduleResolution": "bundler",
+    "noEmit":true,
     "allowImportingTsExtensions": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx",
+    "esModuleInterop": true,
+    "allowJs": true,       
+    "checkJs": true,               
+    "jsx": "react",
     "baseUrl": ".",
+    "skipLibCheck": true, // Пропуск проверки типов в библиотеках
     "paths": {
       "@/*": ["./src/*"]
     },
-
-    /* Linting */
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
   },
   "include": ["src"],
-  "references": [
-  {
-    "path": "./tsconfig.node.json"
-  },
- ]
+  "exclude": ["node_modules"] // Исключить папку node_modules
 }

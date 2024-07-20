@@ -1,1 +1,1 @@
-declare module 'core-digital-marketplace-dashboards/*';
+declare module "*.module.sass"
