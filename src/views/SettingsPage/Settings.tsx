@@ -9,12 +9,11 @@ import Notifications from './Notifications/Notifications';
 import Payment from './Payment/Payment';
 
 import Dropdown from "core-digital-marketplace-dashboards/src/components/Dropdown";
-import Page from 'core-digital-marketplace-dashboards/src/components/Page';
 import styles from './Settings.module.sass';
 
 interface Navigation {title: string, action:  () => void }
 
-export default function Settings(){
+export const Settings =  (props: {title: string})=>{
   const { t } = useTranslation();
   const [visible, setVisible] = useState(false);
  
@@ -57,9 +56,9 @@ export default function Settings(){
 
     return (
       <> 
-        <Page title="Настройки">
+        <div className={cn("h3", styles.container, styles.title)}>{props.title}</div>
         <div className={styles.settings}>
-        <div className={styles.menu}>
+          <div className={styles.menu}>
           {listNavigation.map((item, index) => (
             <button
               className={cn(styles.button, {
@@ -71,8 +70,8 @@ export default function Settings(){
               {item.title}
             </button>
           ))}
-        </div>
-        <div className={styles.wrapper}>
+          </div>
+          <div className={styles.wrapper}>
           <Dropdown
             className={styles.dropdown}
             classDropdownHead={styles.dropdownHead}
@@ -115,9 +114,8 @@ export default function Settings(){
             </div>
           </div>
           <button className={cn("button", styles.button)}>Save</button>
+          </div>
         </div>
-      </div>
-        </Page>
       </>
     )
 }

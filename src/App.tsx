@@ -1,9 +1,8 @@
-import { Routes, Route, Outlet } from "react-router-dom";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import React from "react";
 
 import Home from '@/views/HomePage/Home.tsx'
-import Settings from '@/views/SettingsPage/Settings.tsx'
+import {Settings} from '@/views/SettingsPage/Settings.tsx'
 import Login from '@/views/LoginPage/Login.tsx'
 import MainLayout from '@/views/MainLayout/MainLayout.tsx'
 
@@ -13,12 +12,12 @@ const router = createBrowserRouter([
     element:<MainLayout />,
     children: [
       {
-        index: true, // Этот маршрут будет отображаться по умолчанию
+        // index: true, // Этот маршрут будет отображаться по умолчанию
         element: <Home />,
       },
       {
         path: 'settings',
-        element: <Settings/>,
+        element: <Settings title="Настройки" />,
       },
     ],
   },

@@ -1,30 +1,30 @@
 import {Outlet } from "react-router-dom";
 import { useState } from "react";
+import React from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
 
-import Sidebar from 'core-digital-marketplace-dashboards/src/components/Sidebar';
+import Sidebar from '@/components/SideLeftBar/SideLeftBar'
 import Header from 'core-digital-marketplace-dashboards/src/components/Header';
 
-import styles from "core-digital-marketplace-dashboards/src/components/Sidebar/Sidebar.module.sass";
+import styles from './style.module.sass';
 import cn from "classnames";
 
 
-export default function Settings(){
- 
-const [visible, setVisible] = useState(false);
-return <>
- <div className="flex w-full h-full">
+
+export default function MainLayout(){
+   const [visible, setVisible] = useState(false);
+   return <>
+   <div  className={styles.page}>
       <Sidebar 
          className={cn(styles.sidebar, {
                     [styles.visible]: visible,
              })}
                 onClose={() => setVisible(false)}
          />
-      <div className="flex flex-col w-full">
-        <Header></Header>
-        <Outlet /> {/* Это место, где будут рендериться дочерние маршруты */}
+      <Header onOpen={() => setVisible(true)} />
+      <div className={styles.inner}>
+         <Outlet /> {/* Это место, где будут рендериться дочерние маршруты */}
       </div>
-      
-     </div>
- 
+   </div>
 </>
 }
