@@ -5,6 +5,7 @@ import Home from '@/views/HomePage/Home.tsx'
 import {Settings} from '@/views/SettingsPage/Settings.tsx'
 import Login from '@/views/LoginPage/Login.tsx'
 import MainLayout from '@/views/MainLayout/MainLayout.tsx'
+import EmployeesPage from '@/views/EmployeesPage/EmployeesPage.tsx'
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
       {
         path: 'settings',
         element: <Settings title="Настройки" />,
+      },
+      {
+        path: 'employees',
+        element: <EmployeesPage title="Сотрудники лаборатории" />,
       },
     ],
   },

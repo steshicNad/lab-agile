@@ -53,7 +53,7 @@ const navigation = [
         title: "Сотрудники",
         slug: "customers",
         icon: "profile-circle",
-        url: "/Customers",
+        url: "/employees",
         // dropdown: [
         //     {
         //         title: "Overview",

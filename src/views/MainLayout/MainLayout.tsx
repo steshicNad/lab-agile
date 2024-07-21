@@ -1,7 +1,6 @@
 import {Outlet } from "react-router-dom";
 import { useState } from "react";
 import React from "react";
-import { Routes, Route, useLocation } from "react-router-dom";
 
 import Sidebar from '@/components/SideLeftBar/SideLeftBar'
 import Header from 'core-digital-marketplace-dashboards/src/components/Header';
