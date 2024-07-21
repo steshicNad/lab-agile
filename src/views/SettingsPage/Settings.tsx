@@ -4,6 +4,9 @@ import { useTranslation } from "react-i18next";
 import cn from "classnames";
 
 import Account from './Account/Account';
+import ProfileInformation from './Profile/ProfileInformation';
+import Notifications from './Notifications/Notifications';
+import Payment from './Payment/Payment';
 
 import Dropdown from "core-digital-marketplace-dashboards/src/components/Dropdown";
 import Page from 'core-digital-marketplace-dashboards/src/components/Page';
@@ -84,7 +87,7 @@ export default function Settings(){
               })}
             >
               <div className={styles.anchor} ref={scrollToProfile}></div>
-              {/* <ProfileInformation /> */}
+              <ProfileInformation title={options[0]} />
             </div>
             <div
               className={cn(styles.item, {
@@ -100,7 +103,7 @@ export default function Settings(){
               })}
             >
               <div className={styles.anchor} ref={scrollToNotification}></div>
-              {/* <Notifications /> */}
+              <Notifications title={options[2]} />
             </div>
             <div
               className={cn(styles.item, {
@@ -108,7 +111,7 @@ export default function Settings(){
               })}
             >
               <div className={styles.anchor} ref={scrollToPayment}></div>
-              {/* <Payment /> */}
+              <Payment  title='Оплата'/>
             </div>
           </div>
           <button className={cn("button", styles.button)}>Save</button>

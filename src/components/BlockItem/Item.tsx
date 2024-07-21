@@ -1,10 +1,11 @@
 import React,{ ReactNode } from "react";
 import cn from "classnames";
-import styles from "core-digital-marketplace-dashboards/src/screens/Settings/Item";
-
+import styles from "./style.module.sass";
 
 interface ItemProps{
-    className: string, classTitle: string, title: string, 
+    className: string, 
+    classTitle: string, 
+    title: string, 
     children: ReactNode
 }
 
